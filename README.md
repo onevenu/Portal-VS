@@ -1,7 +1,7 @@
 # PowerApps Portal Web Template Developement Cheatsheet
-    This script/functions can reduce a lot of development effort by quicky uploading the changed liquid code to Dynamics CRM online.
-    VSCODE contains extensions to support liquid template files along with autocompletion for javascripts and color coding schemes. 
-    All these really help in developement when the code size increases.
+This script/functions can reduce a lot of development effort by quicky uploading the changed liquid code to Dynamics CRM online.
+VSCODE contains extensions to support liquid template files along with autocompletion for javascripts and color coding schemes. 
+All these really help in developement when the code size increases.
 
 
 ## Follow these to setup VSCODE
