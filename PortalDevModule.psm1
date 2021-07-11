@@ -1,4 +1,4 @@
-﻿
+
 #$global:conn = Get-CrmConnection -InteractiveMode
 $global:conn
 $global:WebTemplateId
@@ -15,23 +15,12 @@ function Portal-Authenticate {
 }
 function Portal-SearchTemplate {
     param (
-       [Parameter(Mandatory=$true)]
+       [Parameter(Mandatory=$false)]
        [String]$Name
     )
 
-    $fetch = "<fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'>"+
-               "  <entity name='adx_webtemplate'>"+
-               "    <attribute name='adx_webtemplateid' />"+
-               "    <attribute name='adx_name' />"+
-               "    <attribute name='adx_source' />"+
-               "    <order attribute='adx_name' descending='false' />"+
-               "    <filter type='and'>"+
-               "      <condition attribute='adx_name' operator='like' value='%"+$Name+"%' />"+
-               "    </filter>"+
-               "  </entity>"+
-               "</fetch>"
     if($conn -ne $null ){
-     $templateRecords = (Get-CrmRecordsByFetch -conn $conn -Fetch $fetch).CrmRecords
+     $templateRecords = (Get-CrmRecords -conn $conn -EntityLogicalName adx_webtemplate -Fields adx_name,adx_source -FilterAttribute adx_name -FilterOperator like -FilterValue %$Name%).CrmRecords
         if($templateRecords.Count -gt 0){
             for ($i = 0; $i -lt $templateRecords.Count; $i++) {
                 Write-Host [$i] $templateRecords[$i].adx_webtemplateid " | " $templateRecords[$i].adx_name
