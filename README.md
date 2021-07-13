@@ -1,4 +1,4 @@
-#![image](https://user-images.githubusercontent.com/8717736/125460042-3a33fbe8-5e34-4a73-b46f-746d82c11eff.png) PowerApps Portal Web Template Developement Cheatsheet
+# ![image](https://user-images.githubusercontent.com/8717736/125460042-3a33fbe8-5e34-4a73-b46f-746d82c11eff.png) PowerApps Portal Web Template Developement Cheatsheet
 This script/functions can reduce a lot of development effort by quicky uploading the changed liquid code to Dynamics CRM online.
 VSCODE contains extensions to support liquid template files along with autocompletion for javascripts and color coding schemes. 
 All these really help in developement when the code size increases.
